@@ -1,6 +1,7 @@
 # 🐳 containerized-microservice-architecture
 
 > 📌 Designed and implemented a microservices architecture using Docker containers.
+> It demonstrates the impact of caching in distributed systems and streamlined deployments using Docker Compose for consistent, scalable environments.
 
 🛠️ __Tech Stack__ 
 1. Docker
