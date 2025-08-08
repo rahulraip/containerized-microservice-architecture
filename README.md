@@ -21,7 +21,7 @@
 
 ## Project Structure
 
-📂 user-service  (_1st Microservice_) <br>
+📂 user-service  <br>
 This folder contains the main application code along with its Dockerfile for creating the container image.
 
 Main Script: app.py
@@ -29,8 +29,32 @@ Main Script: app.py
 - Docker Support: Ready-to-build image using the provided Dockerfile.
 - requirements.txt – Lists the Python dependencies required inside the container.
 
-📂 data-service (_2nd Microservice_) <br>
+📂 data-service <br>
 This folder contains:
 - app.py – Responsible for reading user data from the Redis database on the first request for caching purposes.
 - Dockerfile – Used to build the Docker image for this service.
 - requirements.txt – Lists the Python dependencies required inside the container.
+
+## 📄 Docker Compose Setup
+
+`docker-compose.yml` file defines the multi-container setup for the project:
+- user-service – Flask-based microservice connecting to PostgreSQL
+- data-service – Flask-based microservice connecting to Redis and PostgreSQL
+- postgres – PostgreSQL database with initialization script (init.sql)
+- redis – In-memory cache database
+
+__Persistent Storage:__
+PostgreSQL data is stored in a named volume pgdata.
+
+To run the setup:
+
+`docker-compose up --build`
+
+To stop services:
+
+`docker-compose down`
+
+To remove all containers & volumes:
+
+`docker-compose down -v`
+
