@@ -92,5 +92,7 @@ And the 2nd curl command connects to the different app (port: 5001) for fetching
 - But next time the data loads on redis db base (in-memory), so the accessing speed of the data will be very fast.
 - SEE: `cached:"true"`
 
+## CONCLUSION:
 
+This setup not only improves performance but also illustrates the real-world use of caching in distributed applications.
 
